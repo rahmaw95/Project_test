@@ -1,0 +1,10 @@
+Your public key
+07ce49deb4db58c5c0b0b32a65a9f157
+Your private key
+6398a0f9d851430d603f51889ec8f7b4883299d4
+
+aunthentication
+http://gateway.marvel.com/v1/public/comics?ts=1&apikey=1234&hash=ffd275c5130566a2916217b101f26150
+
+hashapi : haskey didapat (1+privatekey+publickey)
+http://gateway.marvel.com/v1/public/comics?ts=1&apikey=07ce49deb4db58c5c0b0b32a65a9f157&hash=9712925550c951d0c12ed920db8bf9dc
