@@ -135,7 +135,6 @@ body {
     .nav-bg-opacity .link-font .color-font {
       color: #fff !important; }
     .nav-bg-opacity .link-font .router-link-active {
-      border-bottom: 2px solid #fff;
       padding-bottom: 20px; }
   @media screen and (max-width: 768px) {
     .nav-bg-opacity {
@@ -153,7 +152,6 @@ body {
     .nav-bg-white .link-font .color-font {
       color: #2a7bb6 !important; }
     .nav-bg-white .link-font .router-link-active {
-      border-bottom: 2px solid #2a7bb6;
       padding-bottom: 20px; }
   @media screen and (max-width: 768px) {
     .nav-bg-white {

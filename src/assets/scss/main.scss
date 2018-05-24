@@ -136,8 +136,8 @@ body{
       color:$color-white !important;
     }
     .router-link-active {
-      border-bottom: 2px solid $color-white;
       padding-bottom: 20px;
+      font-weight:700
     }
   }
   @media screen and (max-width: 768px) {
@@ -156,8 +156,8 @@ body{
       color:$color-blue !important;
     }
     .router-link-active {
-      border-bottom: 2px solid $color-blue;
       padding-bottom: 20px;
+      font-weight:700
     }
   }
 

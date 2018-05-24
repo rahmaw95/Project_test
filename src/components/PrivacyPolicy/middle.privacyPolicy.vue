@@ -1,28 +1,28 @@
-<!-- <template>
+<template>
   <div class="container" id="app">
 
-    <Searchform v-on:sourceChanged="sourceChanged"></Searchform>
-    <CharacterList v-bind:result="result"></CharacterList>
+    <CharactersList v-on:sourceChanged="sourceChanged"></CharactersList>
+    <SearchCharacterform v-bind:source="source"></SearchCharacterform>
 
   </div>
 </template>
 <script>
-import CharacterList from '../character/CharactersList'
-import Searchform from '../character/SearchCharacterForm'
+import CharactersList from '../character/CharactersList'
+import SearchCharacterform from '../character/SearchCharacterform'
 export default {
   name: 'app',
   components: {
-    CharacterList,
-    Searchform
+    CharactersList,
+    SearchCharacterform
   },
   data () {
     return {
-      result: ""
+      source: ""
     }
   },
   methods: {
-    sourceChanged: function (result) {
-      this.result = result;
+    sourceChanged: function (source) {
+      this.source = source;
     }
   }
 }
@@ -31,4 +31,4 @@ export default {
   #app {
     padding-top: 20px
   }
-</style> -->
+</style>

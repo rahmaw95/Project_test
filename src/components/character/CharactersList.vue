@@ -1,16 +1,17 @@
 <template>
-  <div class="ComicList">
+  <div class="newslist">
     <div class="container">
-      <ul class="media-list" v-for="lists in processedPosts">
-        <li class="media" v-for="list in lists">
+      <ul class="media-list">
+        <li class="media" v-for="article in articles">
           <div class="media-left">
-            <a v-bind:href="list.url" target="_blank">
-              <img class="media-object" v-bind:src="list.image">
+            <a v-bind:href="article.url" target="_blank">
+              <img class="media-object" v-bind:src="article.urlToImage">
             </a>
           </div>
           <div class="media-body">
-            <h4 class="media-heading"><a v-bind:href="list.url" target="_blank">{{list.title}}</a></h4>
-            <p>{{list.description}}</p>
+            <h4 class="media-heading"><a v-bind:href="article.url" target="_blank">{{article.title}}</a></h4>
+            <h5><i>by {{article.author}}</i></h5>
+            <p>{{article.description}}</p>
           </div>
         </li>
       </ul>
@@ -18,46 +19,28 @@
   </div>
 </template>
 <script>
-import {mapGetters} from 'vuex'
-
 export default {
-  name: 'ComicList',
-  props: ['results'],
+  name: 'newslist',
+  props: ['source'],
   data () {
     return {
-      lists: []
+      articles: []
     }
   },
   methods: {
-    updateResults: function (title) {
-      let url = 'https://gateway.marvel.com/v1/public/comics?ts=1&titleStartsWith=' + title + '&apikey=07ce49deb4db58c5c0b0b32a65a9f157' + '&hash=9712925550c951d0c12ed920db8bf9dc'
-      this.$http.get(url)
+    updateSource: function (source) {
+      this.$http.get('https://newsapi.org/v2/top-headlines?sources=' + source + 'apiKey=233c9d9f90b149c3bb7bfe78cc11adbc')
        .then(response => {
-         this.lists = response.data.data.results;
+         this.articles = response.data.articles;
        });
     }
   },
-  computed: {
-    processedPosts() {
-      let lists = this.results;
-      posts.map((list) => {
-        return {
-          title: list.title,
-          filter: list.format,
-          creators: list.creators.items[1] ? list.creators.items[1].name : list.creators.items[0],
-          url: list.urls[1] ? list.urls[1].url : list.urls[0].url,
-          image: `${list.thumbnail.path}.${list.thumbnail.extension}`,
-          description: list.description === '' ? 'No description listed for this comics.' : list.description
-        }
-      })
-    }
-  },
   created: function () {
-    this.updateResults(this.results);
+    this.updateSource(this.source);
   },
   watch: {
-    results: function (val) {
-      this.updateResults(val);
+    source: function (val) {
+      this.updateSource(val);
     }
   }
 }
