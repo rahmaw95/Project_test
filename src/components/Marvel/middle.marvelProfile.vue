@@ -1,20 +1,20 @@
 <template>
   <div class="page">
-    <!-- <filter-form></filter-form> -->
-    <!-- <search-comics-form></search-comics-form> -->
     <comics-list></comics-list>
     <div class="loading" v-show="isLoading">
-      <img src="/FireJak/images/loading.gif">
+      <img v-bind:src="imageLink">
     </div>
   </div>
 </template>
 
 <script>
-// import SearchComicsForm from '../Comics/SearchComicsForm'
 import ComicsList from '../Comics/ComicsList'
 // import filterForm from '../character/filterForm'
 
 export default {
+  data: {
+      imageLink: require('../../assets/images/loading.gif')
+  },
   components: {
     // SearchComicsForm,
     ComicsList,
@@ -32,5 +32,6 @@ export default {
   .loading{
     text-align: center;
     padding-top: 50px;
+    padding-bottom: 50px;
   }
 </style>
