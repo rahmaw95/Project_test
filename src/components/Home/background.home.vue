@@ -8,9 +8,8 @@
           <div class="col-md-12 col-sm-12">
             <div class="home-title" v-for="home in home">
               <p class="font-title" v-text="home.title"></p>
-              <p class="font-desc" v-text="home.desc">
+              <p class="font-desc" v-text="home.desc" style="text-transform: lowercase">
                 <div class="space-30"></div>
-                <a class="btn-home" v-bind:href="home.link"> Contact Us</a>
             </div>
           </div>
         </div>
@@ -25,8 +24,8 @@ export default {
   data () {
     return {
       home: [{
-        title: 'We Build and Develop',
-        desc: 'We do Mobile Development, Analytical Research, Web Products, Data Scientist, QA testing, Brand Strategy and more',
+        title: "IT'S ALL STAR WARS ON MARVEL'S THE PULL LIST",
+        desc: "PREVIEW THIS WEEK'S NEW MARVEL COMICS",
         link: '/about'
       }]
     }

@@ -5,7 +5,7 @@
           <span class="navbar-toggler-icon"></span>
       </button>
       <router-link to="/" class="navbar-brand">
-        <img src="../../assets/img/gibox_digital.png" class="logo-brand">
+        <img src="../../assets/img/marvel-logo.png" class="logo-brand">
       </router-link>
       <div class="navbar-collapse collapse" id="navbarCollapse" aria-expanded="false" style="">
         <ul class="navbar-nav ml-auto w-100 justify-content-end">
@@ -26,7 +26,7 @@ export default {
       $(function () {
         $(window).scroll(function () {
           if ($(this).scrollTop() > 100) {
-            $('.nav-bg-opacity').addClass('nav-bg-white').css('color', 'blue')
+            $('.nav-bg-opacity').addClass('nav-bg-white').css('color', 'black')
           } else {
             $('.nav-bg-opacity').removeClass('nav-bg-white')
           }
@@ -37,23 +37,13 @@ export default {
       menus: [
         {
           active: false,
-          name: 'About us',
-          link: '/aboutUs'
+          name: 'Comics',
+          link: '/marvelComics'
         },
         {
           active: false,
-          name: 'Careers',
-          link: '/careers'
-        },
-        {
-          active: false,
-          name: 'Contact Us',
-          link: '/contactUs'
-        },
-        {
-          active: false,
-          name: 'Marvel profile',
-          link: '/marvelProfile'
+          name: 'Characters',
+          link: '/marvelCharacters'
         }
       ]
     }

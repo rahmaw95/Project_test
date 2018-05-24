@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <comics-list></comics-list>
+    <characters-list></characters-list>
     <div class="loading" v-show="isLoading">
       <img v-bind:src="imageLink">
     </div>
@@ -8,17 +8,14 @@
 </template>
 
 <script>
-import ComicsList from '../Comics/ComicsList'
-// import filterForm from '../character/filterForm'
+import CharactersList from '../Characters/CharactersList'
 
 export default {
   data: {
       imageLink: require('../../assets/images/loading.gif')
   },
   components: {
-    // SearchComicsForm,
-    ComicsList,
-    // filterForm,
+    CharactersList,
   },
   computed:{
     isLoading () {

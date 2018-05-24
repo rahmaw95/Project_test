@@ -8,7 +8,7 @@
 
 <script>
 import headerMarvel from '../components/Common/header.common'
-import middleMarvel from '../components/Marvel/middle.marvelProfile'
+import middleMarvel from '../components/Marvel/middle.marvelComics'
 import footerMarvel from '../components/Common/footer.common'
 
 export default {

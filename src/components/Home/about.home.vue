@@ -1,38 +1,39 @@
 <template>
   <section style="padding:100px 0;background:#fafafa">
     <div class="container">
-      <div class="row" v-for="about in about">
-        <div class="col-md-6 col-sm-12 box-wedo">
+      <div class="row" >
+        <div class="col-md-4 col-sm-12 box-wedo" v-for="about in about">
           <div class="wedo-content">
-            <p class="desc text-left" style="color:#4d4d4d" v-text="about.desc"></p>
-
+            <h1 class="titlee text-left" style="color:#4d4d4d;font-weight:600" v-text="about.title"></h1>
+            <p style="font-size:18px">preview this week's new marvel comics</p>
             <div class="space-40"></div>
-            <a v-bind:href="about.link" class="btn-portofolio"> Learn More</a>
           </div>
         </div>
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-7 col-sm-12">
           <div class="about-header">
-            <img v-bind:src="about.image" class="content-image">
+            <comicSlide></comicSlide>
           </div>
         </div>
       </div>
     </div>
-</section>
+  </section>
 </template>
 
 <script>
-
+import comicSlide from '../Comics/comicSlide'
 export default {
   data () {
     return {
       about: [
         {
-          desc: 'We are committed to providing high-quality products and services to our customers to help our costomers business grow. We believe that our consistency and commitment have made us become one of trusted IT Company in Indonesia and make our customers happy.',
-          link: 'about-us.html',
+          title: 'BEST SELLING DIGITAL COMICS',
           image: require('../../assets/images/background/about.jpg')
         }
-      ]
+      ],
     }
+  },
+  components: {
+    comicSlide
   }
 }
 
@@ -41,16 +42,16 @@ export default {
 <style scoped>
 .about-header{
   position:relative;
-  background-color: white;
-  height:450px;
-  padding:0
+  height:0px;
+  padding:0;
 }
 .content-image{
   width:100%;
   position:absolute;
   margin:45px -30px
 }
-.dec{
+.titlee{
   color:#000;
+  font-size: 33px;
 }
 </style>

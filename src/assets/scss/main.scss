@@ -2,7 +2,9 @@ $font : 'Roboto', sans-serif;
 $color-white:#fff;
 $color-blue:#2a7bb6;
 $color-black:#4d4d4d;
+$color-darkblack:#000;
 $font-title:3em;
+$color-red:#b31717;
 
 *, *:before, *:after{
   padding-top: 0;
@@ -58,13 +60,17 @@ body{
       transform: translate(-50%, -50%);
   }
   .video-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 135%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 135%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 500px 0 500px 718px;
+    border-color: transparent transparent transparent #b31717;
 
   }
   @media screen and (max-width: 768px) {
@@ -153,7 +159,7 @@ body{
     font-size:18px !important;
     padding-left: 40px !important;
     .color-font{
-      color:$color-blue !important;
+      color:$color-black !important;
     }
     .router-link-active {
       padding-bottom: 20px;
@@ -179,7 +185,7 @@ body{
 
 
 .logo-brand{
-  width:35%;
+  width:25%;
   @media screen and (max-width:768px){
     width:30%;
   }
@@ -305,15 +311,15 @@ body{
 //portofolio
 
 .btn-portofolio{
-  border:2px solid $color-blue;
-  background-color: $color-blue;
+  border:2px solid $color-darkblack;
+  background-color: $color-darkblack;
   padding:10px 20px;
   text-decoration: none;
   transition: all ease-out 0.4s;
   font-size:18px;
   color:$color-white;
   &:hover{
-    color:$color-blue;
+    color:$color-darkblack;
     background-color:transparent;
     text-decoration: none;
 
@@ -413,8 +419,8 @@ body{
 
 //footer
 .footer-bg{
-  background-color: $color-blue;
-  padding: 40px 0;
+  background-color: $color-darkblack;
+  padding: 20px 0;
   color: $color-white;
   ul{
     li{
@@ -482,7 +488,7 @@ canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(46, 138, 189, 0.7);
+    background-color: rgba(9, 8, 8, 0.8);
     z-index: 0;
   }
   .header-content{
@@ -542,4 +548,10 @@ canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container
 //contacts
 .input{
   height: 55px;
+}
+
+
+.navbar-toggleable-md .navbar-nav .nav-link {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
 }

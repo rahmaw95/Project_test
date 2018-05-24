@@ -5,15 +5,18 @@ import 'bootstrap'
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueCarousel from 'vue-carousel'
 import VueLazyload from 'vue-lazyload'
 import SocialSharing from 'vue-social-sharing'
 import store from './store'
+import Carousel3d from 'vue-carousel-3d'
+
 import vSelect from 'vue-select'
 import jQuery from 'jquery'
 import VueResource from 'vue-resource'
 
 global.jQuery = jQuery
-Vue.use(VueResource)
+Vue.use(VueResource, VueCarousel, Carousel3d)
 Vue.component('v-select', vSelect)
 Vue.config.productionTip = false
 

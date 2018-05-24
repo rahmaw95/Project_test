@@ -53,6 +53,6 @@ export default {
 
 <style>
   .background {
-    background-image: url(../../assets/images/4.jpg)
+    background-image: url(../../assets/images/1.jpg)
   }
 </style>
