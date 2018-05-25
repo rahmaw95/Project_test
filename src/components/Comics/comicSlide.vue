@@ -6,10 +6,9 @@
       navigationNextLabel="<i class='fa fa-chevron-right'></i>"
       navigationPrevLabel="<i class='fa fa-chevron-left'></i>"
     >
-      <slide v-on:pageChange="pageChange"
-        data-name="MySlideName" v-for="comic in filteredList"
+      <slide data-name="MySlideName" v-for="comic in filteredList"
         @slideClick="handleSlideClick">
-        <img v-bind:src="comic.image" alt="" class="img-slide">
+        <img :src="comic.image" alt="" class="img-slide">
       </slide>
     </carousel>
   </div>
@@ -17,13 +16,11 @@
 
 <script>
 import mixin from '@/mixins'
-import { Carousel, Slide } from 'vue-carousel'
+import {Carousel, Slide} from 'vue-carousel'
 
 export default {
   name: 'comicsSlider',
   mixins: [mixin],
-  components: {
-  },
   data () {
     return {
       results: '',
@@ -36,10 +33,9 @@ export default {
     comicsSlider () {
       return this.$store.getters.comicsList
     },
-    filteredList() {
+    filteredList () {
       let self = this
-      return self.comicsSlider.filter(post => {
-
+      return self.comicsSlider.filter((post) => {
         let title = post.title && post.title.toLowerCase()
           .includes(self.searchText && self.searchText.toLowerCase())
 
@@ -53,16 +49,13 @@ export default {
       })
     }
   },
-  methods:{
-   pageChange(i){ console.log('current Index', i); },
-  },
   mounted () {
     this.$store.dispatch('getComicsList')
   },
   components: {
     Carousel,
     Slide
-  },
+  }
 }
 
 </script>

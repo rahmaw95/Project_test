@@ -27,7 +27,7 @@ export default {
       about: [
         {
           title: 'BEST SELLING DIGITAL COMICS',
-          image: require('../../assets/images/background/about.jpg')
+          image: '../../assets/images/background/about.jpg'
         }
       ],
     }
